@@ -173,6 +173,7 @@
     usbutils
     nvme-cli
     glances
+    ncdu
     # Langs
     python3
     python312Packages.pip
