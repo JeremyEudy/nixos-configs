@@ -249,6 +249,15 @@
 
   # List services that you want to enable:
   services.flatpak.enable = true;
+  systemd.services.update_tv_steam = {
+    description = "Copy all .acf files from /mnt/games steam library to tv user home library, and remove the libraryfolders.vdf file";
+    script = ''
+      cp -r /mnt/games/SteamLibrary/steamapps/*.acf /home/tv/.local/share/Steam/steamapps && \
+      rm -f /home/tv/.local/share/Steam/steamapps/libraryfolders.vdf && \
+      chown tv:users /home/tv
+    '';
+    wantedBy = [ "multi-user.target" ];
+  };
 # }}}
 # system version {{{
   # This value determines the NixOS release from which the default
