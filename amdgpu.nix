@@ -7,6 +7,14 @@
   # Enable hardware acceleration
   hardware.graphics = {
     enable = true;
+    # enable32Bit = true;
+    # Add AMDVLK drivers in addition to Mesa RADV for Vulkan (software chooses)
+    extraPackages = with pkgs; [
+      amdvlk
+      # vulkan-loader
+      # vulkan-validation-layers
+      # vulkan-extension-layer
+    ];
   };
 
   # HIP
@@ -22,11 +30,6 @@
     };
   in [
     "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
-  ];
-
-  # Add AMDVLK drivers in addition to Mesa RADV for Vulkan (software chooses)
-  hardware.graphics.extraPackages = with pkgs; [
-    amdvlk
   ];
 
   # Fix for black border/scaling issues in GTK apps (can also be solved by using radeon-vulkan instead of amdvlk?)

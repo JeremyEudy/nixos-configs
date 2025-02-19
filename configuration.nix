@@ -169,6 +169,7 @@
     expect
     wireguard-tools
     sshfs
+    borgbackup
     # Hardware/disk utils
     ntfs3g
     lshw
