@@ -170,6 +170,7 @@
     wireguard-tools
     sshfs
     borgbackup
+    gparted
     # Hardware/disk utils
     ntfs3g
     lshw
