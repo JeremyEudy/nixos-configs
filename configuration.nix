@@ -8,6 +8,7 @@
 # imports {{{
   imports = [
       ./hardware-configuration.nix
+      ./zsh.nix
       ./vim.nix
       ./tmux.nix
       ./emulators.nix
@@ -225,11 +226,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # ZSH
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [zsh];
 
   # Steam
   programs.steam = {
