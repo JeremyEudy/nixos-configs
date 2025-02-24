@@ -12,8 +12,6 @@
       ./tmux.nix
       ./emulators.nix
       ./music.nix
-      ./amdgpu.nix
-      ./systemd.nix
       # ./sddm-themes.nix
       <home-manager/nixos>
     ];
@@ -27,7 +25,7 @@
   boot.supportedFilesystems = [ "ntfs" ];
 # }}}
 # networking/ssh {{{
-  networking.hostName = "full-stampede"; # Define your hostname.
+  networking.hostName = "blue-stampede"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
   # Configure network proxy if necessary
@@ -37,7 +35,7 @@
   # Enable networking
   networking.networkmanager.enable = true;
   networking.interfaces.enp39s0.ipv4.addresses = [ {
-    address = "192.168.150.20";
+    address = "192.168.150.25";
     prefixLength = 24;
   } ];
   networking.defaultGateway = "192.168.150.1";
@@ -125,7 +123,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  # services.xserver.libinput.enable = true;
+  services.xserver.libinput.enable = true;
 # }}}
 # users {{{
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -134,11 +132,6 @@
     description = "Jeremy Eudy";
     uid = 1000;
     extraGroups = [ "networkmanager" "wheel" "steam" "audio" ];
-  };
-  users.users.tv = {
-    isNormalUser = true;
-    description = "TV";
-    extraGroups = [ "steam" ];
   };
 # }}}
 # programs {{{
@@ -198,12 +191,8 @@
     konsave
     sddm-astronaut
     # Gaming and graphics
-    vulkan-validation-layers
-    vulkan-tools
     ffmpeg-full
-    alvr
     headsetcontrol
-    oversteer
     protontricks
     wineWowPackages.stable
     winetricks
