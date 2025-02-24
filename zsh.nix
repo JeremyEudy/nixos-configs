@@ -14,6 +14,7 @@
       [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
       export POWERLEVEL10K_MODE=nerdfont-complete
       source ${pkgs.zsh-powerlevel10k}/share/zsh-powerlevel10k/powerlevel10k.zsh-theme
+      fortune | cowsay | lolcat
     '';
     ohMyZsh = {
       enable = true;
