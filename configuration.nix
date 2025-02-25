@@ -8,6 +8,7 @@
 # imports {{{
   imports = [
       ./hardware-configuration.nix
+      ./zsh.nix
       ./vim.nix
       ./tmux.nix
       ./emulators.nix
@@ -34,10 +35,10 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  networking.interfaces.enp39s0.ipv4.addresses = [ {
-    address = "192.168.150.25";
-    prefixLength = 24;
-  } ];
+  # networking.interfaces.enp39s0.ipv4.addresses = [ {
+  #   address = "192.168.150.25";
+  #   prefixLength = 24;
+  # } ];
   networking.defaultGateway = "192.168.150.1";
   networking.nameservers = [ "192.168.150.4" "1.1.1.1" "1.1.0.0" ];
 
@@ -214,11 +215,6 @@
   #   enable = true;
   #   enableSSHSupport = true;
   # };
-
-  # ZSH
-  programs.zsh.enable = true;
-  users.defaultUserShell = pkgs.zsh;
-  environment.shells = with pkgs; [zsh];
 
   # Steam
   programs.steam = {
