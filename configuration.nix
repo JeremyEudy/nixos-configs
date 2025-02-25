@@ -12,9 +12,7 @@
       ./vim.nix
       ./tmux.nix
       ./emulators.nix
-      ./music.nix
       # ./sddm-themes.nix
-      <home-manager/nixos>
     ];
 # }}}
 # boot/fs {{{
@@ -35,10 +33,6 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
-  # networking.interfaces.enp39s0.ipv4.addresses = [ {
-  #   address = "192.168.150.25";
-  #   prefixLength = 24;
-  # } ];
   networking.defaultGateway = "192.168.150.1";
   networking.nameservers = [ "192.168.150.4" "1.1.1.1" "1.1.0.0" ];
 
@@ -88,7 +82,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm.theme = "sddm-astronaut-theme";
 
   # Enable budgie desktop environment
   # services.xserver.displayManager.lightdm.enable = true;
@@ -190,7 +183,6 @@
     kdePackages.kaccounts-providers
     kdePackages.kio-gdrive
     konsave
-    sddm-astronaut
     # Gaming and graphics
     ffmpeg-full
     headsetcontrol
