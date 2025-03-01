@@ -12,7 +12,7 @@
       ./vim.nix
       ./tmux.nix
       ./emulators.nix
-      # ./sddm-themes.nix
+      ./sddm-themes.nix
     ];
 # }}}
 # boot/fs {{{
@@ -117,7 +117,7 @@
   };
 
   # Enable touchpad support (enabled default in most desktopManager).
-  services.xserver.libinput.enable = true;
+  services.libinput.enable = true;
 # }}}
 # users {{{
   # Define a user account. Don't forget to set a password with ‘passwd’.
@@ -190,6 +190,7 @@
     wineWowPackages.stable
     winetricks
     gamescope
+    prismlauncher
     # Fonts
     powerline-fonts
     nerdfonts
