@@ -6,7 +6,7 @@
       flavor = "mocha";
       font  = "Noto Sans";
       fontSize = "9";
-      background = "${./assets/Theater.JPG}";
+      background = "${./assets/space.png}";
       loginBackground = true;
     }
   )];
