@@ -40,6 +40,7 @@
       de = "docker-compose exec";
       dps = "docker-compose ps";
       greatfox = "ssh -X jeremy@greatfox.net";
+      sl = "source .local.rc";
     };
   };
   users.defaultUserShell = pkgs.zsh;
