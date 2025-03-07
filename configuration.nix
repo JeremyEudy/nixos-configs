@@ -209,7 +209,6 @@
     wineWowPackages.stable
     winetricks
     gamescope
-    sunshine
     # Fonts
     powerline-fonts
     nerdfonts
