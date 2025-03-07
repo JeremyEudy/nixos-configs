@@ -39,7 +39,7 @@
       dn = "docker-compose down";
       de = "docker-compose exec";
       dps = "docker-compose ps";
-      greatfox = "ssh -X jeremy@greatfox.net";
+      greatfox = "ssh -X jeremy@192.168.150.4";
     };
   };
   users.defaultUserShell = pkgs.zsh;

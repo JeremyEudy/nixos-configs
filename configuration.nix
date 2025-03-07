@@ -56,7 +56,7 @@
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ 7777 ];
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 # }}}
@@ -209,6 +209,7 @@
     wineWowPackages.stable
     winetricks
     gamescope
+    sunshine
     # Fonts
     powerline-fonts
     nerdfonts
