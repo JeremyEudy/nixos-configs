@@ -261,6 +261,22 @@
     autoStart = false;
     capSysAdmin = true;
     openFirewall = true;
+    applications = {
+      env = {
+        PATH = "$(PATH):$(HOME)/.local/bin";
+      };
+      apps = [
+        {
+          name = "Desktop";
+          image-path = "desktop.png";
+        }
+        {
+          name = "Steam Big Picture";
+          detached = [ "steam -gamepadui" ];
+          image-path = "steam.png";
+        }
+      ];
+    };
   };
 
   # List services that you want to enable:
