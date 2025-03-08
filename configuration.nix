@@ -15,7 +15,7 @@
       ./music.nix
       ./amdgpu.nix
       ./systemd.nix
-      # ./sddm-themes.nix
+      ./sddm-themes.nix
       <home-manager/nixos>
     ];
 # }}}
