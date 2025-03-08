@@ -166,8 +166,11 @@
     glances
     ncdu
     # Langs
-    python3
-    python312Packages.pip
+    (python312.withPackages(python-pkgs: with python-pkgs; [
+      pip
+      setuptools
+      pylama
+    ]))
     rustc
     # GUI stuff
     vlc
