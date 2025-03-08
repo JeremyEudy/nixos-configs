@@ -1,15 +1,12 @@
 { pkgs, ... }:
 {
-  programs.vim.enable = true;
-  programs.vim.defaultEditor = true;
-  environment.systemPackages = with pkgs; [
-    ((vim_configurable.override { python3 = python3; }).customize {
-      name = "vim";
-      vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
-        start = [ vim-nix vim-airline vim-airline-themes python-mode ];
-        opt = [];
-      };
-      vimrcConfig.customRC = ''
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
+    configure = {
+      customRC = ''
         " *start* {{{
         if has('vim_starting')
           if &compatible
@@ -23,19 +20,11 @@
         " *colors and visual preferences* {{{
         syntax enable
         set background=dark                             " dark background!
-        if exists("$DISPLAY") " in X11
-          set t_Co=256
-          let airline#extensions#tabline#enabled=1
-          let airline#extensions#tabline#formatter='default'
-          let airline_powerline_fonts=1
-          let airline_theme='wombat'
-        else
-          set t_Co=256
-          let airline#extensions#tabline#enabled=1
-          let airline#extensions#tabline#formatter='default'
-          let airline_powerline_fonts=1
-          let airline_theme='onedark'
-        endif
+        set t_Co=256
+        let airline#extensions#tabline#enabled=1
+        let airline#extensions#tabline#formatter='default'
+        let airline_powerline_fonts=1
+        let airline_theme='onedark'
         set cursorline                                  " horizontal line where cursor is
         set list                                        " show hidden characters
         set listchars=eol:¬,tab:»\ ,extends:»,trail:·   " configure what to show for hidden characters
@@ -152,6 +141,9 @@
         nnoremap <leader>r :!python3 %
         " }}}
       '';
-    })
-  ];
+      packages.myVimPackage = with pkgs.vimPlugins; {
+        start = [ vim-nix vim-airline vim-airline-themes onedark-vim python-mode ];
+      };
+    };
+  };
 }
