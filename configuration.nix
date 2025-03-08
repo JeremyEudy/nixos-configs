@@ -90,7 +90,6 @@
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
-  services.displayManager.sddm.theme = "sddm-astronaut-theme";
 
   # Enable budgie desktop environment
   # services.xserver.displayManager.lightdm.enable = true;
@@ -201,7 +200,6 @@
     kdePackages.kaccounts-providers
     kdePackages.kio-gdrive
     konsave
-    sddm-astronaut
     # Gaming and graphics
     vulkan-validation-layers
     vulkan-tools
