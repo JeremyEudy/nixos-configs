@@ -180,8 +180,10 @@
     glances
     ncdu
     # Langs
-    python3
+    python312Full
     python312Packages.pip
+    python312Packages.setuptools
+    python312Packages.pylama
     rustc
     # GUI stuff
     vlc
@@ -190,6 +192,7 @@
     bitwarden-desktop
     gimp-with-plugins
     krita
+    appimage-run
     # KDE Stuff
     kdePackages.discover
     kdePackages.kdeconnect-kde
@@ -213,6 +216,12 @@
     powerline-fonts
     nerdfonts
   ];
+
+  # AppImage tweaks
+  programs.appimage = {
+    enable = true;
+    binfmt = true;
+  };
 
   # udev rules
   # services.udev.extraRules = ''
@@ -245,6 +254,14 @@
   xdg.portal = {
     enable = true;
     xdgOpenUsePortal = true;
+  };
+
+  # Sunshine game streaming
+  services.sunshine = {
+    enable = true;
+    autoStart = false;
+    capSysAdmin = true;
+    openFirewall = true;
   };
 
   # List services that you want to enable:
