@@ -59,7 +59,7 @@
         set softtabstop=4               " make spaces feel like tabs (i.e. <BS> deletes to last tabstop)
         set tabstop=4                   " number of spaces tab inserts
         set expandtab                   " use spaces rather than tabs
-        set indentkeys-=0"              " do not break indent on #
+        set indentkeys-=0#              " do not break indent on #
         set cinoptions=:s,ps,ts,cs      " how cindent re-indents a line
         set cinwords=if,else,while,do
         set cinwords+=for,switch,case   " words that cause indent on next line
