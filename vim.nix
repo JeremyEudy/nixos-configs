@@ -1,12 +1,15 @@
 { pkgs, ... }:
 {
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    configure = {
-      customRC = ''
+  programs.vim.enable = true;
+  programs.vim.defaultEditor = true;
+  environment.systemPackages = with pkgs; [
+    ((vim_configurable.override { python3 = python3; }).customize {
+      name = "vim";
+      vimrcConfig.packages.myplugins = with pkgs.vimPlugins; {
+        start = [ vim-nix vim-airline vim-airline-themes onedark-vim python-mode ];
+        opt = [];
+      };
+      vimrcConfig.customRC = ''
         " *start* {{{
         if has('vim_starting')
           if &compatible
@@ -141,9 +144,6 @@
         nnoremap <leader>r :!python3 %
         " }}}
       '';
-      packages.myVimPackage = with pkgs.vimPlugins; {
-        start = [ vim-nix vim-airline vim-airline-themes onedark-vim python-mode ];
-      };
-    };
-  };
+    })
+  ];
 }

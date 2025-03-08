@@ -180,10 +180,11 @@
     glances
     ncdu
     # Langs
-    python312Full
-    python312Packages.pip
-    python312Packages.setuptools
-    python312Packages.pylama
+    (python312.withPackages(python-pkgs: with python-pkgs; [
+      pip
+      setuptools
+      pylama
+    ]))
     rustc
     # GUI stuff
     vlc
