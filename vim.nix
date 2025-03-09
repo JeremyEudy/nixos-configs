@@ -136,6 +136,9 @@
         filetype plugin indent on
         syntax on
         " Pymode settings
+        set textwidth=0
+        setlocal textwidth=0
+        let pymode_options_max_line_length=0
         let pymode_lint_ignore=["E501", "E127"]     " Ignore line length warnings and line split+length warnings
         " Bind \c to run linter
         nnoremap <leader>c :PymodeLint<CR>
