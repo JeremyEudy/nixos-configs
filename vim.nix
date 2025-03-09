@@ -24,6 +24,7 @@
         syntax enable
         set background=dark                             " dark background!
         set t_Co=256
+        colorscheme onedark
         let airline#extensions#tabline#enabled=1
         let airline#extensions#tabline#formatter='default'
         let airline_powerline_fonts=1
