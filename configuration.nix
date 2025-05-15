@@ -214,6 +214,8 @@
     # Fonts
     powerline-fonts
     nerdfonts
+    # Android Utilities
+    android-tools
   ];
 
   # AppImage tweaks

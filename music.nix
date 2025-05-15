@@ -8,6 +8,7 @@
   environment.systemPackages = with pkgs; [
     reaper
     helm
+    musescore
     # Required for yabdridge
     wine-staging
     # VST management
