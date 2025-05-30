@@ -101,7 +101,7 @@
   hardware.bluetooth.enable = true;
 
   # Enable sound with pipewire.
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -196,7 +196,9 @@
     prismlauncher
     # Fonts
     powerline-fonts
-    nerdfonts
+    nerd-fonts.meslo-lg
+    # Android Utilities
+    android-tools
   ];
 
   # udev rules
