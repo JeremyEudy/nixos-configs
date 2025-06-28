@@ -58,7 +58,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ 7777 ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 # }}}
 # locale {{{
   # Set your time zone.
@@ -193,6 +193,7 @@
     gimp-with-plugins
     krita
     appimage-run
+    localsend
     # KDE Stuff
     kdePackages.discover
     kdePackages.kdeconnect-kde
@@ -208,6 +209,8 @@
     headsetcontrol
     oversteer
     protontricks
+    gamemode
+    mangohud
     wineWowPackages.stable
     winetricks
     gamescope
