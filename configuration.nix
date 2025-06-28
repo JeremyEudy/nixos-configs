@@ -16,7 +16,6 @@
       ./amdgpu.nix
       ./systemd.nix
       ./sddm-themes.nix
-      <home-manager/nixos>
     ];
 # }}}
 # boot/fs {{{
