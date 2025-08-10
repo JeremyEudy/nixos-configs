@@ -182,6 +182,7 @@
       pip
       setuptools
       pylama
+      ipython
     ]))
     rustc
     # GUI stuff
