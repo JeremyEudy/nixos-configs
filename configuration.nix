@@ -158,6 +158,7 @@
     sshfs
     borgbackup
     gparted
+    bunbun
     # Hardware/disk utils
     ntfs3g
     lshw
