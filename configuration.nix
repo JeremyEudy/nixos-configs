@@ -40,6 +40,7 @@
     address = "192.168.150.20";
     prefixLength = 24;
   } ];
+  networking.interfaces.enp39s0.wakeOnLan.enable = true;
   networking.defaultGateway = "192.168.150.1";
   networking.nameservers = [ "192.168.150.4" "1.1.1.1" "1.1.0.0" ];
 
@@ -170,6 +171,7 @@
     sshfs
     borgbackup
     gparted
+    bunbun
     # Hardware/disk utils
     ntfs3g
     lshw
