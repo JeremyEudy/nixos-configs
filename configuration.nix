@@ -15,6 +15,7 @@
       ./music.nix
       ./amdgpu.nix
       ./systemd.nix
+      ./tv_services.nix
       ./sddm-themes.nix
     ];
 # }}}
@@ -139,6 +140,7 @@
     isNormalUser = true;
     description = "TV";
     extraGroups = [ "steam" ];
+    linger = true;
   };
 # }}}
 # programs {{{
@@ -167,11 +169,13 @@
     wget
     git
     expect
-    wireguard-tools
-    sshfs
     borgbackup
     gparted
     bunbun
+    # Network Stuff
+    sshfs
+    wireguard-tools
+    wgnord
     # Hardware/disk utils
     ntfs3g
     lshw
