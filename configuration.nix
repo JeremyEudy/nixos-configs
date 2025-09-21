@@ -20,6 +20,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  boot.kernelParams = [ "mem_sleep_default=s2idle" ];
 
   # Enable ntfs support
   boot.supportedFilesystems = [ "ntfs" ];
@@ -86,6 +87,7 @@
 
   # Enable the KDE Plasma Desktop Environment.
   services.displayManager.sddm.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
   services.desktopManager.plasma6.enable = true;
 
   # Enable budgie desktop environment
@@ -146,7 +148,7 @@
   environment.systemPackages = with pkgs; [
     # Editors
     nano
-    kdePackages.kate
+    gedit
     # Terminal
     blackbox-terminal
     # Dev tools
@@ -170,6 +172,7 @@
     nvme-cli
     glances
     ncdu
+    openrgb
     # Langs
     (python312.withPackages(python-pkgs: with python-pkgs; [
       pip
@@ -188,6 +191,7 @@
     appimage-run
     localsend
     # KDE Stuff
+    kdePackages.kate
     kdePackages.discover
     kdePackages.kdeconnect-kde
     kdePackages.kaccounts-integration
@@ -253,6 +257,9 @@
 
   # List services that you want to enable:
   services.flatpak.enable = true;
+
+  # OpenRGB
+  services.hardware.openrgb.enable = true;
 # }}}
 # system version {{{
   # This value determines the NixOS release from which the default
@@ -275,7 +282,13 @@
     dates = "weekly";
   };
 # }}}
-# garbage collector {{{
+# auto updates/garbage collector {{{
+  # Auto updates
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+    dates = "daily";
+  };
   # Garbage Collector
   nix.gc = {
     automatic = true;
