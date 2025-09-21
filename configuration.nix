@@ -183,6 +183,7 @@
     nvme-cli
     glances
     ncdu
+    openrgb
     # Langs
     (python312.withPackages(python-pkgs: with python-pkgs; [
       pip
@@ -208,6 +209,7 @@
     kdePackages.kio-gdrive
     konsave
     # Gaming and graphics
+    discord
     vulkan-validation-layers
     vulkan-tools
     ffmpeg-full
@@ -225,6 +227,7 @@
     nerd-fonts.meslo-lg
     # Android Utilities
     android-tools
+    waydroid
   ];
 
   # AppImage tweaks
@@ -268,6 +271,12 @@
 
   # List services that you want to enable:
   services.flatpak.enable = true;
+
+  # OpenRGB config
+  services.hardware.openrgb.enable = true;
+
+  # waydroid
+  virtualisation.waydroid.enable = true;
 # }}}
 # system version {{{
   # This value determines the NixOS release from which the default
@@ -290,7 +299,13 @@
     dates = "weekly";
   };
 # }}}
-# garbage collector {{{
+# auto updates/garbage collector {{{
+  # Auto updates
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+    dates = "daily";
+  };
   # Garbage Collector
   nix.gc = {
     automatic = true;
