@@ -184,6 +184,7 @@
     bitwarden-desktop
     gimp-with-plugins
     krita
+    localsend
     # KDE Stuff
     kdePackages.discover
     kdePackages.kdeconnect-kde
