@@ -264,7 +264,14 @@
     dates = "weekly";
   };
 # }}}
-# garbage collector {{{
+# auto updates/garbage collector {{{
+  # Auto updates
+  system.autoUpgrade = {
+    enable = true;
+    allowReboot = false;
+    dates = "daily";
+  };
+
   # Garbage Collector
   nix.gc = {
     automatic = true;
