@@ -7,7 +7,7 @@
   # Enable hardware acceleration
   hardware.graphics = {
     enable = true;
-    enable32Bit = true;
+    # enable32Bit = true;
     # Add AMDVLK drivers in addition to Mesa RADV for Vulkan (software chooses)
     extraPackages = with pkgs; [
       amdvlk
