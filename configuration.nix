@@ -259,6 +259,13 @@
     remotePlay.openFirewall = true;
     dedicatedServer.openFirewall = true;
     localNetworkGameTransfers.openFirewall = true;
+    package = pkgs.steam.override {
+      extraPkgs = pkgs: with pkgs; [
+        mesa
+        vulkan-loader
+        vulkan-validation-layers
+      ];
+    };
   };
 
   # SteamVR fix?
