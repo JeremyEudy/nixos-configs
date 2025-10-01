@@ -25,7 +25,10 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable ntfs support
-  boot.supportedFilesystems = [ "ntfs" ];
+  boot.supportedFilesystems = [
+    "ntfs"
+    "exfat"
+  ];
 # }}}
 # networking/ssh {{{
   networking.hostName = "full-stampede"; # Define your hostname.
@@ -184,6 +187,7 @@
     glances
     ncdu
     openrgb
+    parted
     # Langs
     (python312.withPackages(python-pkgs: with python-pkgs; [
       pip
