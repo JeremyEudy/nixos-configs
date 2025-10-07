@@ -140,6 +140,7 @@
     git
     expect
     borgbackup
+    borgmatic
     gparted
     bunbun
     jq
