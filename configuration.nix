@@ -133,15 +133,12 @@
     sshfs
     borgbackup
     gparted
-<<<<<<< HEAD
-=======
     bunbun
     jq
     # Network Stuff
     sshfs
     wireguard-tools
     wgnord
->>>>>>> 1a1fc29 (Moved networking into separate file and added jq)
     # Hardware/disk utils
     ntfs3g
     lshw
