@@ -2,3 +2,4 @@
 
 hardware-configuration.nix
 systemd.nix
+networking.nix

@@ -13,6 +13,7 @@
       ./tmux.nix
       ./emulators.nix
       ./sddm-themes.nix
+      ./networking.nix
     ];
 # }}}
 # boot/fs {{{
@@ -22,39 +23,6 @@
 
   # Enable ntfs support
   boot.supportedFilesystems = [ "ntfs" ];
-# }}}
-# networking/ssh {{{
-  networking.hostName = "blue-stampede"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.defaultGateway = "192.168.150.1";
-  networking.nameservers = [ "192.168.150.4" "1.1.1.1" "1.1.0.0" ];
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = false;
-      X11Forwarding = true;
-    };
-  };
-
-  # Open ports in the firewall.
-  networking.firewall.allowedTCPPorts = [ 
-    53317  # localsend
-  ];
-  networking.firewall.allowedUDPPorts = [ 
-    53317  # localsend
-  ];
-  # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
 # }}}
 # locale {{{
   # Set your time zone.
