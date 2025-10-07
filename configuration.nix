@@ -8,6 +8,7 @@
 # imports {{{
   imports = [
       ./hardware-configuration.nix
+      ./networking.nix
       ./zsh.nix
       ./vim.nix
       ./tmux.nix
@@ -24,39 +25,6 @@
 
   # Enable ntfs support
   boot.supportedFilesystems = [ "ntfs" ];
-# }}}
-# networking/ssh {{{
-  networking.hostName = "duckie-deluxe"; # Define your hostname.
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
-
-  # Enable networking
-  networking.networkmanager.enable = true;
-  networking.interfaces.enp39s0.ipv4.addresses = [ {
-    address = "192.168.150.30";
-    prefixLength = 24;
-  } ];
-  networking.defaultGateway = "192.168.150.1";
-  networking.nameservers = [ "192.168.150.4" "1.1.1.1" "1.1.0.0" ];
-
-  # Enable the OpenSSH daemon.
-  services.openssh = {
-    enable = true;
-    ports = [ 22 ];
-    settings = {
-      PasswordAuthentication = false;
-      X11Forwarding = true;
-    };
-  };
-
-  # Open ports in the firewall.
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ 7777 ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
 # }}}
 # locale {{{
   # Set your time zone.
@@ -165,6 +133,15 @@
     sshfs
     borgbackup
     gparted
+<<<<<<< HEAD
+=======
+    bunbun
+    jq
+    # Network Stuff
+    sshfs
+    wireguard-tools
+    wgnord
+>>>>>>> 1a1fc29 (Moved networking into separate file and added jq)
     # Hardware/disk utils
     ntfs3g
     lshw
