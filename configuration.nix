@@ -132,6 +132,7 @@
     wireguard-tools
     sshfs
     borgbackup
+    borgmatic
     gparted
     bunbun
     jq
