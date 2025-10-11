@@ -16,6 +16,7 @@
       ./music.nix
       ./amdgpu.nix
       ./systemd.nix
+      ./borgmatic.nix
       ./tv_services.nix
       ./sddm-themes.nix
     ];
