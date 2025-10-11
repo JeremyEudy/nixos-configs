@@ -12,6 +12,7 @@
       ./vim.nix
       ./tmux.nix
       ./emulators.nix
+      ./borgmatic.nix
       ./sddm-themes.nix
       ./networking.nix
     ];
