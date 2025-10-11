@@ -14,6 +14,7 @@
       ./tmux.nix
       ./amdgpu.nix
       ./systemd.nix
+      ./borgmatic.nix
       ./sddm-themes.nix
     ];
 # }}}

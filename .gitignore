@@ -4,3 +4,4 @@ hardware-configuration.nix
 systemd.nix
 networking.nix
 smb-secrets
+borgmatic.nix
