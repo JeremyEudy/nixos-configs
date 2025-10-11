@@ -153,7 +153,7 @@
     lshw
     usbutils
     nvme-cli
-    glances
+    btop
     ncdu
     openrgb
     parted
