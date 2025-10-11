@@ -137,7 +137,7 @@
     lshw
     usbutils
     nvme-cli
-    glances
+    btop
     ncdu
     # Langs
     (python312.withPackages(python-pkgs: with python-pkgs; [
