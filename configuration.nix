@@ -129,6 +129,7 @@
     wireguard-tools
     sshfs
     borgbackup
+    borgmatic
     gparted
     bunbun
     # Hardware/disk utils
