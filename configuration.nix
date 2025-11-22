@@ -17,7 +17,7 @@
       ./amdgpu.nix
       ./systemd.nix
       ./borgmatic.nix
-      ./tv_services.nix
+      ./jovian.nix
       ./sddm-themes.nix
     ];
 # }}}
@@ -106,12 +106,6 @@
     description = "Jeremy Eudy";
     uid = 1000;
     extraGroups = [ "networkmanager" "wheel" "steam" "audio" ];
-  };
-  users.users.tv = {
-    isNormalUser = true;
-    description = "TV";
-    extraGroups = [ "steam" ];
-    linger = true;
   };
 # }}}
 # programs {{{
